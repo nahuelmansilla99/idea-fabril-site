@@ -6,6 +6,19 @@ import imagenPipetas from './image/pipetas-coneccion-acometidad.png';
 import miniLogo from './image/mini-logo.png';
 import logo from './image/logo.png';
 
+// Logos de clientes:
+import edea from './image/logos/edea.png';
+import edelap from './image/logos/edelap.png';
+import edemsa from './image/logos/edemsa.png';
+import eden from './image/logos/eden.png';
+import edenor from './image/logos/edenor.png';
+import edersa from './image/logos/edersa.png';
+import edes from './image/logos/edes.png';
+import edesur from './image/logos/edesur.png';
+import epe from './image/logos/epe.png';
+import laCooperativa from './image/logos/la-cooperativa.png';
+import refsa from './image/logos/refsa.png';
+
 function App() {
   return (
 <div className="min-h-screen bg-white text-gray-900 font-sans">
@@ -168,16 +181,70 @@ function App() {
           <h2 className="text-2xl font-bold mb-4">Clientes que confían</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 border rounded-lg">
-              <p className="text-sm italic">"IDEA FABRIL nos ayudó a reducir costos y mejorar la calidad de nuestras piezas en tiempo récord."</p>
-              <p className="mt-3 text-xs font-semibold">— Cliente Automotriz</p>
+              <div className="h-40 mb-3 flex items-center justify-center">
+                <img src={edea} alt="Empresa Distribuidora de Energía Atlántica" className="max-h-full max-w-full object-contain" />
+              </div>
+              <p className="mt-3 text-xs font-semibold">Empresa Distribuidora de Energía Atlántica</p>
             </div>
             <div className="p-6 border rounded-lg">
-              <p className="text-sm italic">"Profesionales, rápidos y con una comunicación clara durante todo el proyecto."</p>
-              <p className="mt-3 text-xs font-semibold">— Empresa Electrónica</p>
+              <div className="h-40 mb-3 flex items-center justify-center">
+                <img src={edelap} alt="Empresa Distribuidora La Plata S.A" className="max-h-full max-w-full object-contain" />
+              </div>
+              <p className="mt-3 text-xs font-semibold">Empresa Distribuidora La Plata S.A.</p>
             </div>
             <div className="p-6 border rounded-lg">
-              <p className="text-sm italic">"Excelente control de calidad y trazabilidad en lotes críticos para nuestra línea médica."</p>
-              <p className="mt-3 text-xs font-semibold">— Clínica / OEM</p>
+              <div className="h-40 mb-3 flex items-center justify-center">
+                <img src={edemsa} alt="EDEMSA" className="max-h-full max-w-full object-contain" />
+              </div>
+              <p className="mt-3 text-xs font-semibold">Empresa Distribuidora de Electricidad de Mendoza S.A.</p>
+            </div>
+            <div className="p-6 border rounded-lg">
+              <div className="h-40 mb-3 flex items-center justify-center">
+                <img src={eden} alt="EDEN" className="max-h-full max-w-full object-contain" />
+              </div>
+              <p className="mt-3 text-xs font-semibold">Empresa Distribuidora de Energía Norte S.A.</p>
+            </div>
+            <div className="p-6 border rounded-lg">
+              <div className="h-40 mb-3 flex items-center justify-center">
+                <img src={edenor} alt="EDENOR" className="max-h-full max-w-full object-contain" />
+              </div>
+              <p className="mt-3 text-xs font-semibold">Empresa Distribuidora y Comercializadora Norte S.A.</p>
+            </div>
+            <div className="p-6 border rounded-lg">
+              <div className="h-40 mb-3 flex items-center justify-center">
+                <img src={edersa} alt="EDERSA" className="max-h-full max-w-full object-contain" />
+              </div>
+              <p className="mt-3 text-xs font-semibold">Empresa de Energía de Río Negro S.A.</p>
+            </div>
+            <div className="p-6 border rounded-lg">
+              <div className="h-40 mb-3 flex items-center justify-center">
+                <img src={edes} alt="EDES" className="max-h-full max-w-full object-contain" />
+              </div>
+              <p className="mt-3 text-xs font-semibold">Empresa Distribuidora de Energía Sur S.A.</p>
+            </div>
+            <div className="p-6 border rounded-lg">
+              <div className="h-40 mb-3 flex items-center justify-center">
+                <img src={edesur} alt="EDESUR" className="max-h-full max-w-full object-contain" />
+              </div>
+              <p className="mt-3 text-xs font-semibold">Empresa Distribuidora de Energía Sur S.A.</p>
+            </div>
+            <div className="p-6 border rounded-lg">
+              <div className="h-40 mb-3 flex items-center justify-center">
+                <img src={epe} alt="EPE" className="max-h-full max-w-full object-contain" />
+              </div>
+              <p className="mt-3 text-xs font-semibold">Empresa Provincial de Energía de Santa Fe S.A.</p>
+            </div>
+            <div className="p-6 border rounded-lg">
+              <div className="h-40 mb-3 flex items-center justify-center">
+                <img src={laCooperativa} alt="La Cooperativa" className="max-h-full max-w-full object-contain" />
+              </div>
+              <p className="mt-3 text-xs font-semibold">La Cooperativa Empresa Eléctrica de Godoy Cruz.</p>
+            </div>
+            <div className="p-6 border rounded-lg">
+              <div className="h-40 mb-3 flex items-center justify-center">
+                <img src={refsa} alt="REFSA" className="max-h-full max-w-full object-contain" />
+              </div>
+              <p className="mt-3 text-xs font-semibold">Recursos y Energía Formosa S.A.</p>
             </div>
           </div>
         </section>
