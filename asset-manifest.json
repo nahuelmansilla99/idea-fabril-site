@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/idea-fabril-site/static/css/main.a419fb5b.css",
+    "main.js": "/idea-fabril-site/static/js/main.d58ff285.js",
+    "static/js/453.4aa7424d.chunk.js": "/idea-fabril-site/static/js/453.4aa7424d.chunk.js",
+    "static/media/pipetas-coneccion-acometidad.png": "/idea-fabril-site/static/media/pipetas-coneccion-acometidad.bc010cbb964fcbe7c2e7.png",
+    "static/media/marco-tapa-medidores.png": "/idea-fabril-site/static/media/marco-tapa-medidores.0387b7c59f64ccc85bc8.png",
+    "static/media/tapa-bornes-universal.jpeg": "/idea-fabril-site/static/media/tapa-bornes-universal.2fe3a1af691190c919e0.jpeg",
+    "static/media/refsa.png": "/idea-fabril-site/static/media/refsa.642df626a43a112ee71c.png",
+    "static/media/epe.png": "/idea-fabril-site/static/media/epe.c5dcd6315ca1f5948976.png",
+    "static/media/edersa.png": "/idea-fabril-site/static/media/edersa.2219800cc3ddbc3a29e5.png",
+    "static/media/edesur.png": "/idea-fabril-site/static/media/edesur.00cda93a46a1dd9aaa7b.png",
+    "static/media/edes.png": "/idea-fabril-site/static/media/edes.70399d96b7716bd7df9e.png",
+    "static/media/la-cooperativa.png": "/idea-fabril-site/static/media/la-cooperativa.12704324da1faba72692.png",
+    "static/media/eden.png": "/idea-fabril-site/static/media/eden.a89fa745e74f210fad29.png",
+    "static/media/edea.png": "/idea-fabril-site/static/media/edea.af9753d3303f39f3799b.png",
+    "static/media/edemsa.png": "/idea-fabril-site/static/media/edemsa.d3b70d1d6aeb06f1c661.png",
+    "static/media/edenor.png": "/idea-fabril-site/static/media/edenor.7b70b8ba6f9f59bd4d9f.png",
+    "static/media/tapa-inspeccion-jabalina.jpeg": "/idea-fabril-site/static/media/tapa-inspeccion-jabalina.61ccf74334945a424b5c.jpeg",
+    "static/media/edelap.png": "/idea-fabril-site/static/media/edelap.287baf323bfb1bd7d592.png",
+    "index.html": "/idea-fabril-site/index.html",
+    "main.a419fb5b.css.map": "/idea-fabril-site/static/css/main.a419fb5b.css.map",
+    "main.d58ff285.js.map": "/idea-fabril-site/static/js/main.d58ff285.js.map",
+    "453.4aa7424d.chunk.js.map": "/idea-fabril-site/static/js/453.4aa7424d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a419fb5b.css",
+    "static/js/main.d58ff285.js"
+  ]
+}
