@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 import imagenMarco from './image/marco-tapa-medidores.png';
 import imagenBornes from './image/tapa-bornes-universal.jpeg';
@@ -20,6 +21,35 @@ import laCooperativa from './image/logos/la-cooperativa.png';
 import refsa from './image/logos/refsa.png';
 
 function App() {
+
+  const [formData, setFormData] = useState({
+    nombre: '',
+    email: '',
+    mensaje: '',
+    empresa: ''
+  });
+
+  const enviarFormulario = (e) => {
+    e.preventDefault();
+    console.log("formulario enviado", formData);
+  };
+
+  const handleInputNombreChange = (e) => {
+    setFormData({...formData, nombre: e.target.value})
+  };
+
+  const handleInputEmailChange = (e) => {
+    setFormData({...formData, email: e.target.value})
+  };
+
+  const handleInputMensajeChange = (e) => {
+    setFormData({...formData, mensaje: e.target.value})
+  };
+
+  const handleInputEmpresaChange = (e) => {
+    setFormData({...formData, empresa: e.target.value})
+  };
+
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
       <header className="bg-black text-white sticky top-0 z-40">
@@ -298,18 +328,20 @@ function App() {
         <section id="contacto" className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Contacto</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <form className="p-6 border rounded-lg">
+            <form className="p-6 border rounded-lg" 
+              onSubmit={enviarFormulario} 
+            >
               <label className="block text-sm font-medium">Nombre</label>
-              <input className="mt-2 w-full p-3 border rounded" placeholder="Tu nombre" />
+              <input className="mt-2 w-full p-3 border rounded" placeholder="Tu nombre" type="text" onChange={handleInputNombreChange}/>
               <label className="block text-sm font-medium mt-4">Empresa / Proyecto</label>
-              <input className="mt-2 w-full p-3 border rounded" placeholder="Empresa" />
+              <input className="mt-2 w-full p-3 border rounded" placeholder="Empresa" type="text" onChange={handleInputEmpresaChange}/>
               <label className="block text-sm font-medium mt-4">Email</label>
-              <input className="mt-2 w-full p-3 border rounded" placeholder="Email" />
+              <input className="mt-2 w-full p-3 border rounded" placeholder="Email" type="email" onChange={handleInputEmailChange} />
               <label className="block text-sm font-medium mt-4">Mensaje</label>
-              <textarea className="mt-2 w-full p-3 border rounded" rows={5} placeholder="Describir pedido / consulta"></textarea>
+              <textarea className="mt-2 w-full p-3 border rounded" rows={5} placeholder="Describir pedido / consulta" type="text" onChange={handleInputMensajeChange}></textarea>
               <label className="block text-sm font-medium mt-4">Adjuntar plano (opcional)</label>
               <input type="file" className="mt-2 w-full" />
-              <button type="button" className="mt-4 px-6 py-3 bg-black text-white rounded-2xl">Enviar</button>
+              <button type="submit" className="mt-4 px-6 py-3 bg-black text-white rounded-2xl">Enviar</button>
             </form>
 
             <div className="p-6 border rounded-lg">
