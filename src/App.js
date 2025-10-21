@@ -26,8 +26,10 @@ function App() {
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="w-36 md:w-44 flex items-center gap-2">
-              <img src={miniLogo} alt="IDEA FABRIL S.A." className="object-contain w-10" />
-              <p>IDEA FABRIL</p>
+              <a href="#inicio" className="flex items-center gap-2">
+                <img src={miniLogo} alt="IDEA FABRIL S.A." className="object-contain w-10" />
+                <p>IDEA FABRIL</p>
+              </a>
             </div>
             <div className="hidden md:block text-sm uppercase tracking-widest text-gray-300">
               • INYECCIÓN DE PLÁSTICO PARA LA INDUSTRIA ELÉCTRICA •
@@ -139,7 +141,6 @@ function App() {
         {/* PORTFOLIO / CASES */}
         <section id="portfolio" className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Algunos de nuestros productos</h2>
-          <p className="text-gray-700 mb-4">Algunos proyectos destacados (imágenes y descripciones breves). Aquí podés agregar fotos reales de las piezas y proyectos con el resultado y el beneficio para el cliente.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-4 border rounded-lg">
               {/* Proyecto A */}
@@ -313,9 +314,11 @@ function App() {
 
             <div className="p-6 border rounded-lg">
               <h4 className="font-semibold">Datos</h4>
-              <p className="text-sm text-gray-600 mt-2">Email: contacto@ideafabril.com</p>
+              <p className="text-sm text-gray-600 mt-2">Email: info@ideafabril.net.ar</p>
               <p className="text-sm text-gray-600">Tel: 2216045782</p>
-              <p className="text-sm text-gray-600">Dirección: calle 147 nro 154, La Plata, Argentina</p>
+
+              <p className="text-sm text-gray-600">Dirección: calle 147 nro 154, La Plata, Argentina.</p>
+              <a className="text-sm text-gray-600 hover:underline hover:text-blue-500" href='https://www.instagram.com/ideafabril_s.a/' target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram text-lg font-bold" aria-hidden="true"></i> @ideafabril_s.a</a>
 
               <h5 className="font-semibold mt-6">¿Cómo solicitar tu presupuesto?</h5>
               <ol className="text-sm text-gray-600 ml-5 list-decimal">
@@ -331,8 +334,11 @@ function App() {
       <footer className="bg-black text-white py-8">
         <div className="max-w-6xl mx-auto px-6 text-sm">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <div>© {new Date().getFullYear()} IDEA FABRIL S.A. - Todos los derechos reservados</div>
-            <div className="mt-4 md:mt-0">Diseño simple • Contacto:  Info@ideafabril.net.ar</div>
+            <div className='flex items-center'>
+              <p>© {new Date().getFullYear()} IDEA FABRIL S.A. - Todos los derechos reservados -</p>
+              <a className="text-white ml-1 hover:underline hover:text-blue-500" href='https://www.instagram.com/ideafabril_s.a/' target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram text-lg" aria-hidden="true"></i></a>
+            </div>
+            <div className="mt-4 md:mt-0">Diseño simple • Contacto:  info@ideafabril.net.ar</div>
           </div>
         </div>
       </footer>
