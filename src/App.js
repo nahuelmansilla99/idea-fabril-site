@@ -19,6 +19,7 @@ import edesur from './image/logos/edesur.png';
 import epe from './image/logos/epe.png';
 import laCooperativa from './image/logos/la-cooperativa.png';
 import refsa from './image/logos/refsa.png';
+import ContactForm from './components/ContactForm/ContactForm';
 
 function App() {
 
@@ -332,15 +333,25 @@ function App() {
               onSubmit={enviarFormulario} 
             >
               <label className="block text-sm font-medium">Nombre</label>
-              <input className="mt-2 w-full p-3 border rounded" placeholder="Tu nombre" type="text" onChange={handleInputNombreChange}/>
+              <input 
+                className="mt-2 w-full p-3 border rounded" 
+                placeholder="Tu nombre" 
+                type="text" 
+                onChange={handleInputNombreChange}
+              />
+
               <label className="block text-sm font-medium mt-4">Empresa / Proyecto</label>
               <input className="mt-2 w-full p-3 border rounded" placeholder="Empresa" type="text" onChange={handleInputEmpresaChange}/>
+
               <label className="block text-sm font-medium mt-4">Email</label>
               <input className="mt-2 w-full p-3 border rounded" placeholder="Email" type="email" onChange={handleInputEmailChange} />
+
               <label className="block text-sm font-medium mt-4">Mensaje</label>
               <textarea className="mt-2 w-full p-3 border rounded" rows={5} placeholder="Describir pedido / consulta" type="text" onChange={handleInputMensajeChange}></textarea>
+
               <label className="block text-sm font-medium mt-4">Adjuntar plano (opcional)</label>
               <input type="file" className="mt-2 w-full" />
+
               <button type="submit" className="mt-4 px-6 py-3 bg-black text-white rounded-2xl">Enviar</button>
             </form>
 
@@ -361,74 +372,58 @@ function App() {
           </div>
         </section>
 
-        <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6 ">
-          <h5 className="mb-3 text-base font-semibold text-black md:text-xl">
-            Datos de contacto
-          </h5>
-          <p className="text-sm font-normal text-gray-500 ">Conéctate con nosotros.</p>
-          <ul className="my-4 space-y-3">
-            <li>
-              <a href="https://www.instagram.com/ideafabril_s.a/" target="_blank" rel="noopener noreferrer" className="flex items-center p-3 text-base font-bold text-gray-900 border-gray-300 border rounded-lg bg-gray-200  group hover:border-gray-600 hover:shadow">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-label="Instagram" className='w-5'>
-                  <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
-                </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">Instagram</span>
-                <span className="inline-flex items-center justify-center px-2 py-0.5 ms-3 text-xs font-medium text-gray-500 bg-gray-300 rounded-sm ">Popular</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center p-3 text-base font-bold text-gray-900 border-gray-300 border rounded-lg bg-gray-200  group hover:border-gray-600 hover:shadow">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-label="Correo electrónico" className='w-5'>
-                  <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4zm16 2.4-7.47 5.46a1 1 0 0 1-1.06 0L4 8.4V18h16z"/>
-                </svg>                
-                <span className="flex-1 ms-3 whitespace-nowrap">Correo electrónico</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center p-3 text-base font-bold text-gray-900 border-gray-300 border rounded-lg bg-gray-200  group hover:border-gray-600 hover:shadow">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-label="Dirección o ubicación" className='w-5'>
-                  <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
-                </svg>       
-                <span className="flex-1 ms-3 whitespace-nowrap">Dirección</span>
-              </a>
-            </li>
-            <li>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center p-3 text-base font-bold text-gray-900 border-gray-300 border rounded-lg bg-gray-200  group hover:border-gray-600 hover:shadow">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-label="Teléfono" className='w-5'>
-                  <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1v3.61a1 1 0 0 1-1 1A17 17 0 0 1 3 5a1 1 0 0 1 1-1h3.61a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.58 1 1 0 0 1-.24 1.05z"/>
-                </svg>
-                <span className="flex-1 ms-3 whitespace-nowrap">Teléfono</span>
-              </a>
-            </li>
 
-          </ul>
-          <div>
-            <a href="#" className="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400">
-              
-              Why do I need to connect with me?</a>
-          </div>
-        </div>
+        <section className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+          <ContactForm />
 
-        <section className="bg-white dark:bg-gray-900">
-          <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-              <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Contact Us</h2>
-              <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.</p>
-              <form action="#" className="space-y-8">
-                  <div>
-                      <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Your email</label>
-                      <input type="email" id="email" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="name@flowbite.com" required/>
-                  </div>
-                  <div>
-                      <label for="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Subject</label>
-                      <input type="text" id="subject" className="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Let us know how we can help you" required/>
-                  </div>
-                  <div className="sm:col-span-2">
-                      <label for="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Your message</label>
-                      <textarea id="message" rows="6" className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Leave a comment..."></textarea>
-                  </div>
-                  <button type="submit" className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send message</button>
-              </form>
+          <div className="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow-sm sm:p-6"> 
+            <h5 className="mb-3 text-base font-semibold text-black md:text-xl">
+              Datos de contacto
+            </h5>
+            <p className="text-sm font-normal text-gray-500 ">Conéctate con nosotros.</p>
+            <ul className="my-4 space-y-3">
+              <li>
+                <a href="https://www.instagram.com/ideafabril_s.a/" target="_blank" rel="noopener noreferrer" className="flex items-center p-3 text-base font-bold text-gray-900 border-gray-300 border rounded-lg bg-gray-200  group hover:border-gray-600 hover:shadow">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" aria-label="Instagram" className='w-5'>
+                    <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+                  </svg>
+                  <span className="flex-1 ms-3 whitespace-nowrap">Instagram</span>
+                  <span className="inline-flex items-center justify-center px-2 py-0.5 ms-3 text-xs font-medium text-gray-500 bg-gray-300 rounded-sm ">Popular</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center p-3 text-base font-bold text-gray-900 border-gray-300 border rounded-lg bg-gray-200  group hover:border-gray-600 hover:shadow">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-label="Correo electrónico" className='w-5'>
+                    <path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4zm16 2.4-7.47 5.46a1 1 0 0 1-1.06 0L4 8.4V18h16z"/>
+                  </svg>                
+                  <span className="flex-1 ms-3 whitespace-nowrap">Correo electrónico</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center p-3 text-base font-bold text-gray-900 border-gray-300 border rounded-lg bg-gray-200  group hover:border-gray-600 hover:shadow">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-label="Dirección o ubicación" className='w-5'>
+                    <path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/>
+                  </svg>       
+                  <span className="flex-1 ms-3 whitespace-nowrap">Dirección</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center p-3 text-base font-bold text-gray-900 border-gray-300 border rounded-lg bg-gray-200  group hover:border-gray-600 hover:shadow">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-label="Teléfono" className='w-5'>
+                    <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1v3.61a1 1 0 0 1-1 1A17 17 0 0 1 3 5a1 1 0 0 1 1-1h3.61a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.58 1 1 0 0 1-.24 1.05z"/>
+                  </svg>
+                  <span className="flex-1 ms-3 whitespace-nowrap">Teléfono</span>
+                </a>
+              </li>
+
+            </ul>
+            <div>
+              <a href="#" className="inline-flex items-center text-xs font-normal text-gray-500 hover:underline dark:text-gray-400">
+                
+                Why do I need to connect with me?</a>
+            </div>
           </div>
+
         </section>
 
       </main>
