@@ -1,7 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { initFlowbite } from "flowbite";
 
 const NuestrosDatos = (open) => {
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     initFlowbite();
@@ -12,6 +13,25 @@ const NuestrosDatos = (open) => {
       window.instgrm.Embeds.process();
     }
   }, [open]);
+
+  const handleCopy = async () => {
+    const text = "+54 221 6045782";
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const input = document.getElementById("num-telefono");
+      if (input) {
+        const prevDisabled = input.disabled;
+        input.disabled = false;
+        input.select();
+        document.execCommand("copy");
+        input.disabled = prevDisabled;
+        input.blur();
+      }
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   return (
     <div className=" p-4 bg-white sm:p-6">
@@ -26,9 +46,6 @@ const NuestrosDatos = (open) => {
           <button
             data-modal-target="modal-ig"
             data-modal-toggle="modal-ig"
-            // href="https://www.instagram.com/ideafabril_s.a/"
-            // target="_blank"
-            // rel="noopener noreferrer"
             type="button"
             className="flex items-center text-left p-3 text-base font-bold text-gray-900 border-gray-300 border rounded-lg bg-gray-200  group hover:border-gray-600 hover:shadow w-full"
           >
@@ -43,10 +60,10 @@ const NuestrosDatos = (open) => {
             </svg>
             <span className="flex-1 ms-3 whitespace-nowrap">Instagram</span>
           </button>
-          {/* Modal Instagram */}
+          {/* MARK: Modal Instagram */}
           <div
             id="modal-ig"
-            tabindex="-1"
+            tabIndex={-1}
             aria-hidden="true"
             className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
           >
@@ -70,9 +87,9 @@ const NuestrosDatos = (open) => {
                     >
                       <path
                         stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
                       />
                     </svg>
@@ -86,7 +103,12 @@ const NuestrosDatos = (open) => {
                       className=" instagram-media justify-center items-center"
                       data-instgrm-permalink="https://www.instagram.com/p/DQCFZGvjfGN/"
                       data-instgrm-version="14"
-                      style={{ background: "#000", border: 0, margin: 0, padding: 0 }}
+                      style={{
+                        background: "#000",
+                        border: 0,
+                        margin: 0,
+                        padding: 0,
+                      }}
                     />
                   </div>
                 </div>
@@ -151,10 +173,10 @@ const NuestrosDatos = (open) => {
             </svg>
             <span className="flex-1 ms-3 whitespace-nowrap">Dirección</span>
           </button>
-          {/* Modal Dirección */}
+          {/* MARK: Modal Dirección */}
           <div
             id="modal-direccion"
-            tabindex="-1"
+            tabIndex={-1}
             aria-hidden="true"
             className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
           >
@@ -178,9 +200,9 @@ const NuestrosDatos = (open) => {
                     >
                       <path
                         stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
                         d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
                       />
                     </svg>
@@ -189,17 +211,16 @@ const NuestrosDatos = (open) => {
                 </div>
 
                 <div className="p-4 md:p-5 space-y-4">
-
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3270.7493762968106!2d-58.010797000000004!3d-34.93782199999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzTCsDU2JzE2LjIiUyA1OMKwMDAnMzguOSJX!5e0!3m2!1ses!2sar!4v1761087919073!5m2!1ses!2sar"
                     width="100%"
                     height="450"
                     style={{ border: 0 }}
-                    allowfullscreen=""
+                    allowFullScreen
                     loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
+                    referrerPolicy="no-referrer-when-downgrade"
                     title="Ubicación Idea Fabril S.A."
-                  ></iframe>
+                  />
                 </div>
 
                 <div className="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b">
@@ -224,11 +245,11 @@ const NuestrosDatos = (open) => {
           </div>
         </li>
         <li className="w-full">
-          <a
-            href="tel:+542216045782"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center p-3 text-base font-bold text-gray-900 border-gray-300 border rounded-lg bg-gray-200  group hover:border-gray-600 hover:shadow"
+          <button
+            data-modal-target="modal-telefono"
+            data-modal-toggle="modal-telefono"
+            type="button"
+            className="flex items-center text-left p-3 text-base font-bold text-gray-900 border-gray-300 border rounded-lg bg-gray-200  group hover:border-gray-600 hover:shadow w-full"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -240,14 +261,103 @@ const NuestrosDatos = (open) => {
               <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.05-.24 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1v3.61a1 1 0 0 1-1 1A17 17 0 0 1 3 5a1 1 0 0 1 1-1h3.61a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.58 1 1 0 0 1-.24 1.05z" />
             </svg>
             <span className="flex-1 ms-3 whitespace-nowrap">Teléfono</span>
-          </a>
+          </button>
+          {/* MARK:Modal Teléfono */}
+          <div
+            id="modal-telefono"
+            tabIndex={-1}
+            aria-hidden="true"
+            className="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full"
+          >
+            <div className="relative p-4 w-full max-w-md max-h-full">
+              <div className="relative bg-white rounded-lg shadow-sm">
+                <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t border-gray-200">
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    Teléfono
+                  </h3>
+                  <button
+                    type="button"
+                    className="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                    data-modal-hide="modal-telefono"
+                  >
+                    <svg
+                      className="w-3 h-3"
+                      aria-hidden="true"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 14 14"
+                    >
+                      <path
+                        stroke="currentColor"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                      />
+                    </svg>
+                    <span className="sr-only">Close modal</span>
+                  </button>
+                </div>
+
+                <div className="p-4 md:p-5">
+                  <form className="space-y-4 text-center" action="#">
+                    <input
+                      id="num-telefono"
+                      type="text"
+                      className=" text-center bg-gray-50 border border-gray-300 text-black text-sm font-semibold rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                      value="+54 221 6045782"
+                      disabled
+                      readOnly
+                    />
+                    <div className="flex justify-center items-center gap-2 mt-4">
+                      <button
+                        type="button"
+                        onClick={handleCopy}
+                        className="flex-1 w-auto text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-auto py-2.5 text-center items-center inline-flex justify-center"
+                      >
+                        {copied ? (
+                          <span className="inline-flex items-center">
+                            <svg
+                              className="w-3 h-3 text-white me-1.5"
+                              aria-hidden="true"
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 16 12"
+                            >
+                              <path
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M1 5.917 5.724 10.5 15 1.5"
+                              />
+                            </svg>
+                            Copiado!
+                          </span>
+                        ) : (
+                          <span>Copiar número</span>
+                        )}
+                      </button>
+                      <a
+                        href="https://wa.me/542216045782"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 w-auto text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+                      >
+                        Enviar WhatsApp
+                      </a>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </li>
       </ul>
 
       {/* <button  className="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
         Toggle modal
       </button> */}
-
     </div>
   );
 };
