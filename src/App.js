@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Marquee from "react-fast-marquee";
 import './App.css';
 import imagenMarco from './image/marco-tapa-medidores.png';
 import imagenBornes from './image/tapa-bornes-universal.jpeg';
@@ -24,33 +25,19 @@ import NuestrosDatos from './components/NuestrosDatosContacto/NuestrosDatos';
 
 function App() {
 
-  const [formData, setFormData] = useState({
-    nombre: '',
-    email: '',
-    mensaje: '',
-    empresa: ''
-  });
-
-  const enviarFormulario = (e) => {
-    e.preventDefault();
-    console.log("formulario enviado", formData);
-  };
-
-  const handleInputNombreChange = (e) => {
-    setFormData({...formData, nombre: e.target.value})
-  };
-
-  const handleInputEmailChange = (e) => {
-    setFormData({...formData, email: e.target.value})
-  };
-
-  const handleInputMensajeChange = (e) => {
-    setFormData({...formData, mensaje: e.target.value})
-  };
-
-  const handleInputEmpresaChange = (e) => {
-    setFormData({...formData, empresa: e.target.value})
-  };
+  const logosClientes = [
+    { src: edea, alt: 'Empresa Distribuidora de Energía Atlántica' },
+    { src: edelap, alt: 'Empresa Distribuidora La Plata S.A' },
+    { src: edemsa, alt: 'EDEMSA' },
+    { src: eden, alt: 'EDEN' },
+    { src: edenor, alt: 'EDENOR' },
+    { src: edersa, alt: 'EDERSA' },
+    { src: edes, alt: 'EDES' },
+    { src: edesur, alt: 'EDESUR' },
+    { src: epe, alt: 'EPE' },
+    { src: laCooperativa, alt: 'La Cooperativa' },
+    { src: refsa, alt: 'REFSA' },
+  ];
 
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans">
@@ -281,6 +268,18 @@ function App() {
             </div>
           </div>
         </section>
+
+        <Marquee
+          gradient={false}   // sin fade en los bordes
+          speed={50}         // px/seg
+          pauseOnHover       // pausa con hover
+        >
+          {logosClientes.map((logo, i) => (
+            <div key={i} style={{ marginRight: 48, display: "flex", alignItems: "center" }}>
+              <img src={logo.src} alt={logo.alt} height={24} loading="lazy" />
+            </div>
+          ))}
+        </Marquee>
 
         {/* MISION & VISION */}
         <section id="misionvision" className="mb-12">
