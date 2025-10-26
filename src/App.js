@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import Marquee from "react-fast-marquee";
 import './App.css';
 import imagenMarco from './image/marco-tapa-medidores.png';
 import imagenBornes from './image/tapa-bornes-universal.jpeg';
@@ -18,23 +20,45 @@ import edesur from './image/logos/edesur.png';
 import epe from './image/logos/epe.png';
 import laCooperativa from './image/logos/la-cooperativa.png';
 import refsa from './image/logos/refsa.png';
+import ContactForm from './components/ContactForm/ContactForm';
+import NuestrosDatos from './components/NuestrosDatosContacto/NuestrosDatos';
+import Servicios from './components/Servicios/Servicios';
+import Productos from './components/Productos/Productos';
+import Porfolio from './components/Porfolio/Porfolio';
 
 function App() {
+
+  const logosClientes = [
+    { src: edea, alt: 'Empresa Distribuidora de Energía Atlántica' },
+    { src: edelap, alt: 'Empresa Distribuidora La Plata S.A' },
+    { src: edemsa, alt: 'Empresa Distribuidora de Electricidad de Mendoza S.A.' },
+    { src: eden, alt: 'Empresa Distribuidora de Energía Norte S.A.' },
+    { src: edenor, alt: 'Empresa Distribuidora y Comercializadora Norte S.A.' },
+    { src: edersa, alt: 'Empresa de Energía de Río Negro S.A.' },
+    { src: edes, alt: 'Empresa Distribuidora de Energía Sur S.A.' },
+    { src: edesur, alt: 'Empresa Distribuidora de Energía Sur S.A.' },
+    { src: epe, alt: 'Empresa Provincial de Energía de Santa Fe S.A.' },
+    { src: laCooperativa, alt: 'La Cooperativa Empresa Eléctrica de Godoy Cruz.' },
+    { src: refsa, alt: 'Recursos y Energía Formosa S.A.' },
+  ];
+
   return (
-<div className="min-h-screen bg-white text-gray-900 font-sans">
+    <div className="min-h-screen bg-white text-gray-900 font-sans">
       <header className="bg-black text-white sticky top-0 z-40">
         <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <div className="w-36 md:w-44 flex items-center gap-2">
-              <img src={miniLogo} alt="IDEA FABRIL S.A." className="object-contain w-10" />
-              <p>IDEA FABRIL</p>
+              <a href="#" className="flex items-center gap-2">
+                <img src={miniLogo} alt="IDEA FABRIL S.A." className="object-contain w-10" />
+                <p>IDEA FABRIL</p>
+              </a>
             </div>
             <div className="hidden md:block text-sm uppercase tracking-widest text-gray-300">
               • INYECCIÓN DE PLÁSTICO PARA LA INDUSTRIA ELÉCTRICA •
             </div>
           </div>
           <nav className="space-x-4 text-sm hidden md:block">
-            <a href="#inicio" className="hover:underline">Inicio</a>
+            <a href="#" className="hover:underline">Inicio</a>
             <a href="#servicios" className="hover:underline">Servicios</a>
             <a href="#productos" className="hover:underline">Productos</a>
             <a href="#misionvision" className="hover:underline">Misión</a>
@@ -70,7 +94,8 @@ function App() {
         </section>
 
         {/* SERVICES */}
-        <section id="servicios" className="mb-12">
+        <Servicios />
+        {/* <section id="servicios" className="mb-12">
           <h2 className="text-2xl font-bold mb-6">Servicios</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 border rounded-lg shadow-sm">
@@ -90,10 +115,12 @@ function App() {
               <p className="text-sm text-gray-600">Implementamos programas de reciclado de materiales de descarte, promovemos el uso de insumos reciclados y optimizamos continuamente nuestros procesos productivos para minimizar el desperdicio, consolidándonos como una empresa comprometida con el medio ambiente y reconocida por su enfoque verde.</p>
             </div>
           </div>
-        </section>
+        </section> */}
 
+        
         {/* PRODUCTS */}
-        <section id="productos" className="mb-12">
+        <Productos />
+        {/* <section id="productos" className="mb-12">
           <h2 className="text-2xl font-bold mb-6">Productos</h2>
           <p className="text-gray-700 mb-4">Fabricamos una amplia variedad de piezas y componentes para la industria eléctrica, todos diseñados para garantizar durabilidad, seguridad y rendimiento en la vía pública.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -134,15 +161,17 @@ function App() {
               <p className="text-sm text-gray-600">Fabricados en hormigón premoldeado de alta resistencia, nuestros pilares están diseñados para alojar y proteger instalaciones eléctricas en la vía pública. Ofrecen durabilidad frente a condiciones ambientales adversas, resistencia a impactos y facilidad de instalación, garantizando seguridad y confiabilidad en cada punto de conexión.</p>
             </div>
           </div>
-        </section>
+        </section> */}
 
+        
         {/* PORTFOLIO / CASES */}
-        <section id="portfolio" className="mb-12">
+        <Porfolio />
+
+        {/* <section id="portfolio" className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Algunos de nuestros productos</h2>
-          <p className="text-gray-700 mb-4">Algunos proyectos destacados (imágenes y descripciones breves). Aquí podés agregar fotos reales de las piezas y proyectos con el resultado y el beneficio para el cliente.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-4 border rounded-lg">
-              {/* Proyecto A */}
+
               <div className="h-40  mb-3 flex items-center justify-center">
                 <img src={imagenMarco} alt="Marco y tapa para medidores monofásicos, trifásicos y fusibles NH" className="max-h-full max-w-full object-contain" />
               </div>
@@ -150,7 +179,7 @@ function App() {
               <p className="text-sm text-gray-600">Disponibles en versiones ciegas o con sistema de reseteo, cuentan con modos de anclaje mediante tornillos metálicos y un sistema de apertura con tornillos perno excéntrico, garantizando seguridad, funcionalidad y facilidad de instalación.</p>
             </div>
             <div className="p-4 border rounded-lg">
-              {/* Proyecto B */}
+
               <div className="h-40 mb-3 flex items-center justify-center">
                 <img src={imagenBornes} alt="Tapa de bornes universal troquelable" className="max-h-full max-w-full object-contain" />
               </div>
@@ -158,7 +187,7 @@ function App() {
               <p className="text-sm text-gray-600">Este diseño innovador permite que la tapa se adapte a una gran variedad de medidores monofásicos y trifásicos, ofreciendo versatilidad, facilidad de instalación y protección confiable de las conexiones eléctricas.</p>
             </div>
             <div className="p-4 border rounded-lg">
-              {/* Proyecto C */}
+
               <div className="h-40 mb-3 flex items-center justify-center">
                 <img src={imagenJabalina} alt="Tapa de inspección jabalina" className="max-h-full max-w-full object-contain" />
               </div>
@@ -166,7 +195,7 @@ function App() {
               <p className="text-sm text-gray-600">Fabricada en polímero resistente a la intemperie, esta tapa permite una apertura sencilla y ofrece visualización completa de las conexiones, combinando seguridad, durabilidad y facilidad de uso.</p>
             </div>
             <div className="p-4 border rounded-lg">
-              {/* Proyecto D */}
+
               <div className="h-40 mb-3 flex items-center justify-center">
                 <img src={imagenPipetas} alt="Pipetas de conexión para acometidas" className="max-h-full max-w-full object-contain" />
               </div>
@@ -174,12 +203,37 @@ function App() {
               <p className="text-sm text-gray-600">Su diseño en dos mitades permite la instalación sin necesidad de desconectar los cables de entrada y salida, ofreciendo rapidez, seguridad y confiabilidad en cada conexión.</p>
             </div>
           </div>
-        </section>
+        </section> */}
 
+        
         {/* TESTIMONIALS */}
         <section id="testimonios" className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Clientes que confían</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <Marquee
+            gradient={true}   // sin fade en los bordes
+            gradientWidth={50}
+            speed={50}         // px/seg
+            pauseOnHover       // pausa con hover
+          >
+            {logosClientes.map((logo, i) => (
+              <div key={i} style={{ marginRight: 48, display: "flex", alignItems: "center" }} className='max-w-sm rounded-lg flex flex-col'>
+                <img 
+                  src={logo.src} 
+                  alt={logo.alt} 
+                  style={{
+                    height: "100px",     // 🔸 ajustá este valor
+                    width: "auto",
+                    objectFit: "contain",
+                  }} 
+                  loading="lazy" 
+                />
+                <span className="ml-2 text-xs text-gray-700">{logo.alt}</span>
+              </div>
+            ))}
+          </Marquee>
+
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 border rounded-lg">
               <div className="h-40 mb-3 flex items-center justify-center">
                 <img src={edea} alt="Empresa Distribuidora de Energía Atlántica" className="max-h-full max-w-full object-contain" />
@@ -246,8 +300,10 @@ function App() {
               </div>
               <p className="mt-3 text-xs font-semibold">Recursos y Energía Formosa S.A.</p>
             </div>
-          </div>
+          </div> */}
         </section>
+
+
 
         {/* MISION & VISION */}
         <section id="misionvision" className="mb-12">
@@ -294,45 +350,19 @@ function App() {
         </section>
 
         {/* CONTACT */}
-        <section id="contacto" className="mb-12">
-          <h2 className="text-2xl font-bold mb-4">Contacto</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <form className="p-6 border rounded-lg">
-              <label className="block text-sm font-medium">Nombre</label>
-              <input className="mt-2 w-full p-3 border rounded" placeholder="Tu nombre" />
-              <label className="block text-sm font-medium mt-4">Empresa / Proyecto</label>
-              <input className="mt-2 w-full p-3 border rounded" placeholder="Empresa" />
-              <label className="block text-sm font-medium mt-4">Email</label>
-              <input className="mt-2 w-full p-3 border rounded" placeholder="Email" />
-              <label className="block text-sm font-medium mt-4">Mensaje</label>
-              <textarea className="mt-2 w-full p-3 border rounded" rows={5} placeholder="Describir pedido / consulta"></textarea>
-              <label className="block text-sm font-medium mt-4">Adjuntar plano (opcional)</label>
-              <input type="file" className="mt-2 w-full" />
-              <button type="button" className="mt-4 px-6 py-3 bg-black text-white rounded-2xl">Enviar</button>
-            </form>
-
-            <div className="p-6 border rounded-lg">
-              <h4 className="font-semibold">Datos</h4>
-              <p className="text-sm text-gray-600 mt-2">Email: contacto@ideafabril.com</p>
-              <p className="text-sm text-gray-600">Tel: 2216045782</p>
-              <p className="text-sm text-gray-600">Dirección: calle 147 nro 154, La Plata, Argentina</p>
-
-              <h5 className="font-semibold mt-6">¿Cómo solicitar tu presupuesto?</h5>
-              <ol className="text-sm text-gray-600 ml-5 list-decimal">
-                <li>Envía el plano o la referencia del producto.</li>
-                <li>Indica el material deseado y la cantidad requerida.</li>
-              </ol>
-            </div>
-          </div>
-        </section>
+        <ContactForm  />
+        <NuestrosDatos />
 
       </main>
 
       <footer className="bg-black text-white py-8">
         <div className="max-w-6xl mx-auto px-6 text-sm">
           <div className="flex flex-col md:flex-row items-center justify-between">
-            <div>© {new Date().getFullYear()} IDEA FABRIL S.A. - Todos los derechos reservados</div>
-            <div className="mt-4 md:mt-0">Diseño simple • Contacto:  Info@ideafabril.net.ar</div>
+            <div className='flex items-center'>
+              <p>© {new Date().getFullYear()} IDEA FABRIL S.A. - Todos los derechos reservados -</p>
+              <a className="text-white ml-1 hover:underline hover:text-blue-500" href='https://www.instagram.com/ideafabril_s.a/' target="_blank" rel="noopener noreferrer"><i className="fa-brands fa-instagram text-lg" aria-hidden="true"></i></a>
+            </div>
+            <div className="mt-4 md:mt-0">Diseño simple • Contacto:  info@ideafabril.net.ar</div>
           </div>
         </div>
       </footer>

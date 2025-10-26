@@ -2,6 +2,7 @@
   "name": "idea-fabril-site",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://nahuelmansilla99.github.io/idea-fabril-site",
   "dependencies": {
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -9,7 +10,9 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-fast-marquee": "^1.6.5",
     "react-scripts": "5.0.1",
+    "sweetalert2": "^11.26.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -17,7 +20,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "postinstall": "flowbite-react register"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -41,6 +45,7 @@
     "autoprefixer": "^10.4.17",
     "flowbite": "^3.1.2",
     "flowbite-react": "^0.12.9",
+    "gh-pages": "^6.3.0",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1"
   }
