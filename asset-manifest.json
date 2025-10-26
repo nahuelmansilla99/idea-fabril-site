@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/idea-fabril-site/static/css/main.fdab4824.css",
-    "main.js": "/idea-fabril-site/static/js/main.b4c6069f.js",
+    "main.css": "/idea-fabril-site/static/css/main.d360f19f.css",
+    "main.js": "/idea-fabril-site/static/js/main.e038f763.js",
     "static/js/453.4aa7424d.chunk.js": "/idea-fabril-site/static/js/453.4aa7424d.chunk.js",
     "static/media/pipetas-coneccion-acometidad.png": "/idea-fabril-site/static/media/pipetas-coneccion-acometidad.bc010cbb964fcbe7c2e7.png",
     "static/media/marco-tapa-medidores.png": "/idea-fabril-site/static/media/marco-tapa-medidores.0387b7c59f64ccc85bc8.png",
@@ -19,12 +19,12 @@
     "static/media/tapa-inspeccion-jabalina.jpeg": "/idea-fabril-site/static/media/tapa-inspeccion-jabalina.61ccf74334945a424b5c.jpeg",
     "static/media/edelap.png": "/idea-fabril-site/static/media/edelap.287baf323bfb1bd7d592.png",
     "index.html": "/idea-fabril-site/index.html",
-    "main.fdab4824.css.map": "/idea-fabril-site/static/css/main.fdab4824.css.map",
-    "main.b4c6069f.js.map": "/idea-fabril-site/static/js/main.b4c6069f.js.map",
+    "main.d360f19f.css.map": "/idea-fabril-site/static/css/main.d360f19f.css.map",
+    "main.e038f763.js.map": "/idea-fabril-site/static/js/main.e038f763.js.map",
     "453.4aa7424d.chunk.js.map": "/idea-fabril-site/static/js/453.4aa7424d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fdab4824.css",
-    "static/js/main.b4c6069f.js"
+    "static/css/main.d360f19f.css",
+    "static/js/main.e038f763.js"
   ]
 }
