@@ -22,21 +22,24 @@ import laCooperativa from './image/logos/la-cooperativa.png';
 import refsa from './image/logos/refsa.png';
 import ContactForm from './components/ContactForm/ContactForm';
 import NuestrosDatos from './components/NuestrosDatosContacto/NuestrosDatos';
+import Servicios from './components/Servicios/Servicios';
+import Productos from './components/Productos/Productos';
+import Porfolio from './components/Porfolio/Porfolio';
 
 function App() {
 
   const logosClientes = [
     { src: edea, alt: 'Empresa Distribuidora de Energía Atlántica' },
     { src: edelap, alt: 'Empresa Distribuidora La Plata S.A' },
-    { src: edemsa, alt: 'EDEMSA' },
-    { src: eden, alt: 'EDEN' },
-    { src: edenor, alt: 'EDENOR' },
-    { src: edersa, alt: 'EDERSA' },
-    { src: edes, alt: 'EDES' },
-    { src: edesur, alt: 'EDESUR' },
-    { src: epe, alt: 'EPE' },
-    { src: laCooperativa, alt: 'La Cooperativa' },
-    { src: refsa, alt: 'REFSA' },
+    { src: edemsa, alt: 'Empresa Distribuidora de Electricidad de Mendoza S.A.' },
+    { src: eden, alt: 'Empresa Distribuidora de Energía Norte S.A.' },
+    { src: edenor, alt: 'Empresa Distribuidora y Comercializadora Norte S.A.' },
+    { src: edersa, alt: 'Empresa de Energía de Río Negro S.A.' },
+    { src: edes, alt: 'Empresa Distribuidora de Energía Sur S.A.' },
+    { src: edesur, alt: 'Empresa Distribuidora de Energía Sur S.A.' },
+    { src: epe, alt: 'Empresa Provincial de Energía de Santa Fe S.A.' },
+    { src: laCooperativa, alt: 'La Cooperativa Empresa Eléctrica de Godoy Cruz.' },
+    { src: refsa, alt: 'Recursos y Energía Formosa S.A.' },
   ];
 
   return (
@@ -91,7 +94,8 @@ function App() {
         </section>
 
         {/* SERVICES */}
-        <section id="servicios" className="mb-12">
+        <Servicios />
+        {/* <section id="servicios" className="mb-12">
           <h2 className="text-2xl font-bold mb-6">Servicios</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 border rounded-lg shadow-sm">
@@ -111,10 +115,12 @@ function App() {
               <p className="text-sm text-gray-600">Implementamos programas de reciclado de materiales de descarte, promovemos el uso de insumos reciclados y optimizamos continuamente nuestros procesos productivos para minimizar el desperdicio, consolidándonos como una empresa comprometida con el medio ambiente y reconocida por su enfoque verde.</p>
             </div>
           </div>
-        </section>
+        </section> */}
 
+        
         {/* PRODUCTS */}
-        <section id="productos" className="mb-12">
+        <Productos />
+        {/* <section id="productos" className="mb-12">
           <h2 className="text-2xl font-bold mb-6">Productos</h2>
           <p className="text-gray-700 mb-4">Fabricamos una amplia variedad de piezas y componentes para la industria eléctrica, todos diseñados para garantizar durabilidad, seguridad y rendimiento en la vía pública.</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -155,14 +161,17 @@ function App() {
               <p className="text-sm text-gray-600">Fabricados en hormigón premoldeado de alta resistencia, nuestros pilares están diseñados para alojar y proteger instalaciones eléctricas en la vía pública. Ofrecen durabilidad frente a condiciones ambientales adversas, resistencia a impactos y facilidad de instalación, garantizando seguridad y confiabilidad en cada punto de conexión.</p>
             </div>
           </div>
-        </section>
+        </section> */}
 
+        
         {/* PORTFOLIO / CASES */}
-        <section id="portfolio" className="mb-12">
+        <Porfolio />
+
+        {/* <section id="portfolio" className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Algunos de nuestros productos</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-4 border rounded-lg">
-              {/* Proyecto A */}
+
               <div className="h-40  mb-3 flex items-center justify-center">
                 <img src={imagenMarco} alt="Marco y tapa para medidores monofásicos, trifásicos y fusibles NH" className="max-h-full max-w-full object-contain" />
               </div>
@@ -170,7 +179,7 @@ function App() {
               <p className="text-sm text-gray-600">Disponibles en versiones ciegas o con sistema de reseteo, cuentan con modos de anclaje mediante tornillos metálicos y un sistema de apertura con tornillos perno excéntrico, garantizando seguridad, funcionalidad y facilidad de instalación.</p>
             </div>
             <div className="p-4 border rounded-lg">
-              {/* Proyecto B */}
+
               <div className="h-40 mb-3 flex items-center justify-center">
                 <img src={imagenBornes} alt="Tapa de bornes universal troquelable" className="max-h-full max-w-full object-contain" />
               </div>
@@ -178,7 +187,7 @@ function App() {
               <p className="text-sm text-gray-600">Este diseño innovador permite que la tapa se adapte a una gran variedad de medidores monofásicos y trifásicos, ofreciendo versatilidad, facilidad de instalación y protección confiable de las conexiones eléctricas.</p>
             </div>
             <div className="p-4 border rounded-lg">
-              {/* Proyecto C */}
+
               <div className="h-40 mb-3 flex items-center justify-center">
                 <img src={imagenJabalina} alt="Tapa de inspección jabalina" className="max-h-full max-w-full object-contain" />
               </div>
@@ -186,7 +195,7 @@ function App() {
               <p className="text-sm text-gray-600">Fabricada en polímero resistente a la intemperie, esta tapa permite una apertura sencilla y ofrece visualización completa de las conexiones, combinando seguridad, durabilidad y facilidad de uso.</p>
             </div>
             <div className="p-4 border rounded-lg">
-              {/* Proyecto D */}
+
               <div className="h-40 mb-3 flex items-center justify-center">
                 <img src={imagenPipetas} alt="Pipetas de conexión para acometidas" className="max-h-full max-w-full object-contain" />
               </div>
@@ -194,12 +203,37 @@ function App() {
               <p className="text-sm text-gray-600">Su diseño en dos mitades permite la instalación sin necesidad de desconectar los cables de entrada y salida, ofreciendo rapidez, seguridad y confiabilidad en cada conexión.</p>
             </div>
           </div>
-        </section>
+        </section> */}
 
+        
         {/* TESTIMONIALS */}
         <section id="testimonios" className="mb-12">
           <h2 className="text-2xl font-bold mb-4">Clientes que confían</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+          <Marquee
+            gradient={true}   // sin fade en los bordes
+            gradientWidth={50}
+            speed={50}         // px/seg
+            pauseOnHover       // pausa con hover
+          >
+            {logosClientes.map((logo, i) => (
+              <div key={i} style={{ marginRight: 48, display: "flex", alignItems: "center" }} className='max-w-sm rounded-lg flex flex-col'>
+                <img 
+                  src={logo.src} 
+                  alt={logo.alt} 
+                  style={{
+                    height: "100px",     // 🔸 ajustá este valor
+                    width: "auto",
+                    objectFit: "contain",
+                  }} 
+                  loading="lazy" 
+                />
+                <span className="ml-2 text-xs text-gray-700">{logo.alt}</span>
+              </div>
+            ))}
+          </Marquee>
+
+          {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-6 border rounded-lg">
               <div className="h-40 mb-3 flex items-center justify-center">
                 <img src={edea} alt="Empresa Distribuidora de Energía Atlántica" className="max-h-full max-w-full object-contain" />
@@ -266,20 +300,10 @@ function App() {
               </div>
               <p className="mt-3 text-xs font-semibold">Recursos y Energía Formosa S.A.</p>
             </div>
-          </div>
+          </div> */}
         </section>
 
-        <Marquee
-          gradient={false}   // sin fade en los bordes
-          speed={50}         // px/seg
-          pauseOnHover       // pausa con hover
-        >
-          {logosClientes.map((logo, i) => (
-            <div key={i} style={{ marginRight: 48, display: "flex", alignItems: "center" }}>
-              <img src={logo.src} alt={logo.alt} height={24} loading="lazy" />
-            </div>
-          ))}
-        </Marquee>
+
 
         {/* MISION & VISION */}
         <section id="misionvision" className="mb-12">
