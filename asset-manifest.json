@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/idea-fabril-site/static/css/main.d360f19f.css",
-    "main.js": "/idea-fabril-site/static/js/main.e038f763.js",
+    "main.js": "/idea-fabril-site/static/js/main.a4de41ad.js",
     "static/js/453.4aa7424d.chunk.js": "/idea-fabril-site/static/js/453.4aa7424d.chunk.js",
     "static/media/pipetas-coneccion-acometidad.png": "/idea-fabril-site/static/media/pipetas-coneccion-acometidad.bc010cbb964fcbe7c2e7.png",
     "static/media/marco-tapa-medidores.png": "/idea-fabril-site/static/media/marco-tapa-medidores.0387b7c59f64ccc85bc8.png",
@@ -20,11 +20,11 @@
     "static/media/edelap.png": "/idea-fabril-site/static/media/edelap.287baf323bfb1bd7d592.png",
     "index.html": "/idea-fabril-site/index.html",
     "main.d360f19f.css.map": "/idea-fabril-site/static/css/main.d360f19f.css.map",
-    "main.e038f763.js.map": "/idea-fabril-site/static/js/main.e038f763.js.map",
+    "main.a4de41ad.js.map": "/idea-fabril-site/static/js/main.a4de41ad.js.map",
     "453.4aa7424d.chunk.js.map": "/idea-fabril-site/static/js/453.4aa7424d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d360f19f.css",
-    "static/js/main.e038f763.js"
+    "static/js/main.a4de41ad.js"
   ]
 }
