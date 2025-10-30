@@ -1,42 +1,65 @@
-import React from "react";
-import Swal from "sweetalert2";
+import React, { useRef, useState } from "react";
+import Swal from "sweetalert2"; // Restauramos la importación de Swal
+
+// Clave de acceso de Web3Forms (proporcionada en tu ejemplo)
+const WEB3FORMS_ACCESS_KEY = "585bf19a-a9a2-4df7-9619-c948b3ee0b3e";
+const WEB3FORMS_API_URL = "https://api.web3forms.com/submit";
 
 const ContactForm = () => {
+  const formRef = useRef(null);
+  const [enviando, setEnviando] = useState(false);
 
-  const email = '1805387ba304704d86dfd42b494bad41';
-  const formRef = React.useRef(null);
-  const [enviando, setEnviando] = React.useState(false);
+  // Eliminamos el fallback manual, confiando en la importación de arriba.
+  // const Swal = typeof window !== 'undefined' && window.Swal ? window.Swal : { ... }; 
 
   const onSubmit = async (e) => {
     e.preventDefault();
     if (enviando) return;
     setEnviando(true);
 
-    try{
+    try {
       const fd = new FormData(formRef.current);
-      await fetch(`https://formsubmit.co/${email}`, {
+      
+      // 1. Añadir la clave de acceso de Web3Forms al FormData
+      fd.append("access_key", WEB3FORMS_ACCESS_KEY);
+
+      // 2. Realizar la petición POST a la API de Web3Forms
+      const response = await fetch(WEB3FORMS_API_URL, {
         method: 'POST',
-        mode: 'no-cors',
         body: fd
       });
 
+      // 3. Leer la respuesta JSON y verificar el estado 'success'
+      const data = await response.json();
 
-      Swal.fire({
-        title: 'Mail enviado!',
-        text: 'Gracias por contactarte, te responderemos a la brevedad.',
-        icon: 'success',
-        timer: 3000,
-        position: 'top-center',
-        showConfirmButton: false,
-      });
-      formRef.current.reset();
+      if (data.success) {
+        Swal.fire({
+          title: 'Mail enviado!',
+          text: 'Gracias por contactarte, te responderemos a la brevedad.',
+          icon: 'success',
+          timer: 3000,
+          position: 'top-center',
+          showConfirmButton: false,
+        });
+        formRef.current.reset();
+      } else {
+        // Manejar errores devueltos por Web3Forms
+        console.error('Error de Web3Forms:', data.message);
+        Swal.fire({
+          title: 'Error',
+          text: data.message || 'Hubo un error al enviar el mail, por favor intenta nuevamente.',
+          icon: 'error',
+        });
+      }
     } catch (error) {
+      // Manejar errores generales de la red
+      console.error('Error de conexión:', error);
       Swal.fire({
         title: 'Error',
-        text: 'Hubo un error al enviar el mail, por favor intenta nuevamente.',
+        text: 'Hubo un error de conexión, por favor intenta nuevamente.',
         icon: 'error',
       });
-    }finally {
+    } finally {
       setEnviando(false);
     }
   };
@@ -56,6 +79,7 @@ const ContactForm = () => {
           className="space-y-8"
           noValidate
         >
+          {/* Campo Nombre */}
           <div>
             <label
               htmlFor="nombre"
@@ -72,6 +96,7 @@ const ContactForm = () => {
               required
             />
           </div>
+          {/* Campo Email */}
           <div>
             <label
               htmlFor="email"
@@ -88,6 +113,7 @@ const ContactForm = () => {
               required
             />
           </div>
+          {/* Campo Asunto */}
           <div>
             <label
               htmlFor="subject"
@@ -104,6 +130,7 @@ const ContactForm = () => {
               required
             />
           </div>
+          {/* Campo Mensaje */}
           <div className="sm:col-span-2">
             <label
               htmlFor="message"
@@ -119,12 +146,12 @@ const ContactForm = () => {
               placeholder="Deja un comentario..."
             ></textarea>
           </div>
-            <input type="hidden" name="_captcha" value="false" />
+          
           <div className="flex justify-center">
             <button
               type="submit"
               disabled={enviando}
-              className="py-3 px-20 text-sm font-medium text-center text-white rounded-lg bg-blue-700 sm:w-fit hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300"
+              className="py-3 px-20 text-sm font-medium text-center text-white rounded-lg bg-blue-700 sm:w-fit hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 disabled:opacity-50"
             >
               {enviando ? 'Enviando...' : 'Enviar'}
             </button>
