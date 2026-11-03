@@ -1,0 +1,9 @@
+services:
+  idea-fabril-site:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: idea-fabril-site
+    restart: unless-stopped
+    ports:
+      - "3000:80"
